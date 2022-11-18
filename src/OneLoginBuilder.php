@@ -6,7 +6,7 @@ use OneLogin\Saml2\Auth as OneLoginAuth;
 use OneLogin\Saml2\Utils as OneLoginUtils;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Contracts\Container\Container;
-use Slides\Saml2\Models\Tenant;
+use Slides\Saml2\Contracts\Tenant;
 use Illuminate\Support\Arr;
 
 /**

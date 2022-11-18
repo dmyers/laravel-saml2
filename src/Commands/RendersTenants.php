@@ -2,6 +2,7 @@
 
 namespace Slides\Saml2\Commands;
 
+use Slides\Saml2\Contracts\Tenant;
 use Illuminate\Support\Str;
 
 /**
@@ -14,15 +15,15 @@ trait RendersTenants
     /**
      * Render tenants in a table.
      *
-     * @param \Slides\Saml2\Models\Tenant|\Illuminate\Support\Collection $tenants
+     * @param \Slides\Saml2\Contracts\Tenant|\Illuminate\Support\Collection $tenants
      * @param string|null $title
      *
      * @return void
      */
     protected function renderTenants($tenants, string $title = null)
     {
-        /** @var \Slides\Saml2\Models\Tenant[]|\Illuminate\Database\Eloquent\Collection $tenants */
-        $tenants = $tenants instanceof \Slides\Saml2\Models\Tenant
+        /** @var \Slides\Saml2\Contracts\Tenant[]|\Illuminate\Database\Eloquent\Collection $tenants */
+        $tenants = $tenants instanceof Tenant
             ? collect([$tenants])
             : $tenants;
 
@@ -49,11 +50,11 @@ trait RendersTenants
     /**
      * Get a columns of the Tenant.
      *
-     * @param \Slides\Saml2\Models\Tenant $tenant
+     * @param \Slides\Saml2\Contracts\Tenant $tenant
      *
      * @return array
      */
-    protected function getTenantColumns(\Slides\Saml2\Models\Tenant $tenant)
+    protected function getTenantColumns(Tenant $tenant)
     {
         return [
             'ID' => $tenant->id,
@@ -75,11 +76,11 @@ trait RendersTenants
     /**
      * Render a tenant credentials.
      *
-     * @param \Slides\Saml2\Models\Tenant $tenant
+     * @param \Slides\Saml2\Contracts\Tenant $tenant
      *
      * @return void
      */
-    protected function renderTenantCredentials(\Slides\Saml2\Models\Tenant $tenant)
+    protected function renderTenantCredentials(Tenant $tenant)
     {
         $this->output->section('Credentials for the tenant');
 

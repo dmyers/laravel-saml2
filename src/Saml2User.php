@@ -3,7 +3,7 @@
 namespace Slides\Saml2;
 
 use OneLogin\Saml2\Auth as OneLoginAuth;
-use Slides\Saml2\Models\Tenant;
+use Slides\Saml2\Contracts\Tenant;
 
 /**
  * Class Saml2User

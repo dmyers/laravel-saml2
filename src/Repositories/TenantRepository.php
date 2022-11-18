@@ -2,7 +2,7 @@
 
 namespace Slides\Saml2\Repositories;
 
-use Slides\Saml2\Models\Tenant;
+use Slides\Saml2\Contracts\Tenant;
 
 /**
  * Class TenantRepository
@@ -20,7 +20,8 @@ class TenantRepository
      */
     public function query(bool $withTrashed = false)
     {
-        $query = Tenant::query();
+        $class = config('saml2.tenantModel');
+        $query = $class::query();
 
         if($withTrashed) {
             $query->withTrashed();
