@@ -25,7 +25,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @package Slides\Saml2\Models
  */
-class Tenant extends Model implements TeanantContract
+class Tenant extends Model implements TenantContract
 {
     use SoftDeletes;
 
