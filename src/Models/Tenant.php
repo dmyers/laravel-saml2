@@ -2,7 +2,6 @@
 
 namespace Slides\Saml2\Models;
 
-use Slides\Saml2\Contracts\Tenant as TenantContract;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -25,7 +24,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  *
  * @package Slides\Saml2\Models
  */
-class Tenant extends Model implements TenantContract
+class Tenant extends Model
 {
     use SoftDeletes;
 

@@ -2,7 +2,7 @@
 
 namespace Slides\Saml2\Repositories;
 
-use Slides\Saml2\Contracts\Tenant;
+use Slides\Saml2\Models\Tenant;
 
 /**
  * Class TenantRepository

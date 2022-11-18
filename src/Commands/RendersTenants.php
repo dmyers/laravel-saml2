@@ -2,7 +2,7 @@
 
 namespace Slides\Saml2\Commands;
 
-use Slides\Saml2\Contracts\Tenant;
+use Slides\Saml2\Models\Tenant;
 use Illuminate\Support\Str;
 
 /**
@@ -15,14 +15,14 @@ trait RendersTenants
     /**
      * Render tenants in a table.
      *
-     * @param \Slides\Saml2\Contracts\Tenant|\Illuminate\Support\Collection $tenants
+     * @param \Slides\Saml2\Models\Tenant|\Illuminate\Support\Collection $tenants
      * @param string|null $title
      *
      * @return void
      */
     protected function renderTenants($tenants, string $title = null)
     {
-        /** @var \Slides\Saml2\Contracts\Tenant[]|\Illuminate\Database\Eloquent\Collection $tenants */
+        /** @var \Slides\Saml2\Models\Tenant[]|\Illuminate\Database\Eloquent\Collection $tenants */
         $tenants = $tenants instanceof Tenant
             ? collect([$tenants])
             : $tenants;
@@ -50,7 +50,7 @@ trait RendersTenants
     /**
      * Get a columns of the Tenant.
      *
-     * @param \Slides\Saml2\Contracts\Tenant $tenant
+     * @param \Slides\Saml2\Models\Tenant $tenant
      *
      * @return array
      */
@@ -76,7 +76,7 @@ trait RendersTenants
     /**
      * Render a tenant credentials.
      *
-     * @param \Slides\Saml2\Contracts\Tenant $tenant
+     * @param \Slides\Saml2\Models\Tenant $tenant
      *
      * @return void
      */

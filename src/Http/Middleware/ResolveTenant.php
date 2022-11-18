@@ -74,7 +74,7 @@ class ResolveTenant
      *
      * @param  \Illuminate\Http\Request  $request
      *
-     * @return \Slides\Saml2\Contracts\Tenant|null
+     * @return \Slides\Saml2\Models\Tenant|null
      */
     protected function resolveTenant($request)
     {
